@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Link Expander</title>
+    <style>
+        body {
+            margin: 20px;
+        }
+        .container {
+            border: 1px solid black;
+            padding: 20px;
+            box-sizing: border-box;
+            width: calc(100vw - 40px);
+            height: calc(100svh - 40px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Youtube Link Fixer</h1>
+        <input type="" id="link" placeholder="Paste your link here">
+        <button id="fixlink">Fix</button><br><br>
+        <a href="#" id="final-link"></a><br><br>
+        if the link doesnt work, make sure you are placing the link with the https:// part still on it.
+    </div>
+
+    <script>
+        $('#fixlink').on('click', () => {
+            const vidId = $('#link').val().substr(17, 11);
+            const finalvid = `https://www.youtube.com/watch?v=${vidId}`
+            $('#final-link').attr('href', finalvid);
+            $('#final-link').text('Click me!');
+        })
+    </script>
+</body>
+</html>
